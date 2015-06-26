@@ -52,17 +52,13 @@ switch (argv.type) {
 }
 
 function inspect() {
-    console.log(require('util').inspect.call(null, arguments, {
+    console.log(require('util').inspect.call(null, arguments[0], {
         depth: 6,
         colors: true
     }));
 }
 
-server.on('response', handler);
-
-server.on('event', handler);
-
-server.on('request', handler);
+server.on('message',handler);
 
 server.listen(argv.port);
 
