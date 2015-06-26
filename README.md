@@ -6,5 +6,5 @@
 
 Utilities based on V8 debugger protocol 
 
-[![NPM](https://nodei.co/npm/oneapm-cli.png)](https://nodei.co/npm/oneapm-debugger/)
+[![NPM](https://nodei.co/npm/oneapm-debugger.png)](https://nodei.co/npm/oneapm-debugger/)
 
