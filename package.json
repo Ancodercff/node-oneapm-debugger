@@ -1,0 +1,34 @@
+{
+  "name": "oneapm-debugger",
+  "version": "0.0.1",
+  "description": "debugger utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./test"
+  },
+  "bin": {
+    "oneapm-debugger": "./bin/oneapm-debugger"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oneapm/oneapm-debugger.git"
+  },
+  "keywords": [
+    "oneapm",
+    "debugger"
+  ],
+  "author": "nodejs@oneapm.com",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/oneapm/oneapm-debugger/issues"
+  },
+  "homepage": "https://github.com/oneapm/oneapm-debugger",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "debug": "^2.2.0",
+    "yargs": "^3.13.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}

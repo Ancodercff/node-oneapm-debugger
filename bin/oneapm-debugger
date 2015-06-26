@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+"use strict";
+
+var debug = require('debug')('oneapm-debugger');
+var chalk = require('chalk');
+var yargs = require('yargs');
+var DebuggerProxyServer = require('../').DebuggerProxyServer;
+
+var argv = yargs
+    .usage('Usage: $0 [options]')
+
+    .default('targetPort', 5858)
+    .describe('targetPort', 'the actual port')
+
+    .default('port', 5859)
+    .describe('port', 'Server port')
+
+    .default('type', 'inspect')
+    .describe('type', 'available type: inspect, short')
+
+    .help('help')
+    .version(function () {
+        return require('../package').version;
+    })
+
+    .alias('t', 'targetPort')
+    .alias('p', 'port')
+
+    .alias('h', 'help')
+    .alias('v', 'version')
+
+    .epilog('Copyright 2015, OneAPM, Inc')
+    .argv;
+
+var server = new DebuggerProxyServer(argv.targetPort);
+
+
+var handler = function () {
+};
+
+switch (argv.type) {
+    case 'inspect':
+        handler = inspect;
+        break;
+    case 'short':
+        handler = function (buf) {
+            console.log(buf.body.type);
+        };
+        break;
+    default :
+        throw new Error('Type not supported');
+}
+
+function inspect() {
+    console.log(require('util').inspect.call(null, arguments, {
+        depth: 6,
+        colors: true
+    }));
+}
+
+server.on('response', handler);
+
+server.on('event', handler);
+
+server.on('request', handler);
+
+server.listen(argv.port);
+
+server.on('listening', function () {
+    console.log(chalk.green(server.address().address + ':' + server.address().port + ' =>' + argv.targetPort));
+})
