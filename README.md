@@ -18,6 +18,7 @@ Usage: oneapm-debugger [options]
 
 Options:
   --type            available type: inspect, short          [default: "inspect"]
+  --no-colors       disable colors
   -t, --targetPort  the actual port                              [default: 5858]
   -p, --port        Server port                                  [default: 5859]
   -h, --help        Show help                                          [boolean]

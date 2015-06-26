@@ -18,6 +18,8 @@ var argv = yargs
     .default('type', 'inspect')
     .describe('type', 'available type: inspect, short')
 
+    .describe('no-colors', 'disable colors')
+
     .help('help')
     .version(function () {
         return require('../package').version;
@@ -53,15 +55,18 @@ switch (argv.type) {
 
 function inspect() {
     console.log(require('util').inspect.call(null, arguments[0], {
-        depth: 6,
-        colors: true
+        depth: 6
     }));
 }
 
-server.on('message',handler);
+server.on('message', handler);
 
 server.listen(argv.port);
 
 server.on('listening', function () {
     console.log(chalk.green(server.address().address + ':' + server.address().port + ' =>' + argv.targetPort));
+});
+
+server.on('error', function (err) {
+    console.error(err)
 })
