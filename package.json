@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oneapm/oneapm-debugger.git"
+    "url": "https://github.com/oneapm/node-oneapm-debugger.git"
   },
   "keywords": [
     "oneapm",
@@ -20,9 +20,9 @@
   "author": "nodejs@oneapm.com",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/oneapm/oneapm-debugger/issues"
+    "url": "https://github.com/oneapm/node-oneapm-debugger/issues"
   },
-  "homepage": "https://github.com/oneapm/oneapm-debugger",
+  "homepage": "https://github.com/oneapm/node-oneapm-debugger",
   "dependencies": {
     "chalk": "^1.0.0",
     "debug": "^2.2.0",

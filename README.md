@@ -1,7 +1,7 @@
 # oneapm-debugger
 
-![NPM](https://david-dm.org/oneapm/oneapm-debugger.svg)
-[![Build Status](https://travis-ci.org/oneapm/oneapm-debugger.svg?branch=master)](https://travis-ci.org/oneapm/oneapm-debugger)
+![NPM](https://david-dm.org/oneapm/node-oneapm-debugger.svg)
+[![Build Status](https://travis-ci.org/oneapm/node-oneapm-debugger.svg?branch=master)](https://travis-ci.org/oneapm/node-oneapm-debugger)
 
 Utilities based on V8 debugger protocol 
 
